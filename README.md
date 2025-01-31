@@ -61,7 +61,7 @@ Ensure you have the following installed:
 ### Base URL (Deployed API Endpoint)
 
 ```
-https://hngtask0-1.onrender.com/
+https://hngtask00.onrender.com/
 ```
 
 ### Endpoint:
@@ -89,13 +89,13 @@ No request parameters required.
 #### **Using `curl` in Terminal:**
 
 ```bash
-curl -X GET https://hngtask0-1.onrender.com/
+curl -X GET https://hngtask00.onrender.com/
 ```
 
 #### **Using JavaScript (Fetch API):**
 
 ```js
-fetch("https://hngtask0-1.onrender.com/")
+fetch("https://hngtask00.onrender.com/")
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -107,7 +107,7 @@ fetch("https://hngtask0-1.onrender.com/")
 
 The API is deployed on **Render** and is publicly accessible.
 
-- **Live URL:** [https://hngtask0-1.onrender.com/](https://hngtask0-1.onrender.com/)
+- **Live URL:** [https://hngtask00.onrender.com/](https://hngtask00.onrender.com/)
 - **Response Time:** < 500ms
 
 ---
