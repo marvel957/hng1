@@ -8,7 +8,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   const data = {
     email: "hamsik957@gmail.com",
-    current_datetime: new Date().toISOString(),
+    current_datetime: new Date().toISOString().split(".")[0] + "Z",
     github_url: "https://github.com/marvel957/hngtask0",
   };
   res.status(200).json(data);
