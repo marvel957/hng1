@@ -1,130 +1,121 @@
-# HNG12 Public API
+# Classify Number API 🚀
 
-## Project Overview
-
-This is a simple public API developed for HNG12, returning essential details in JSON format, including:
-
-- The registered email address.
-- The current datetime in ISO 8601 format (UTC).
-- The GitHub repository URL containing the project code.
-
-The API is built using **Node.js with Express.js** and deployed for public access.
-
-## Technology Stack
-
-- **Backend:** Node.js, Express.js
-- **Deployment:** Render
-- **Version Control:** GitHub
-- **CORS Handling:** Enabled with Express CORS middleware
+A simple REST API built with **Express.js** that takes a number and returns its mathematical properties, along with a fun fact retrieved from the Numbers API.
 
 ---
 
-## Setup Instructions
+## Features
 
-### Prerequisites
-
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v16+ recommended)
-- [Git](https://git-scm.com/)
-
-### Installation & Running Locally
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/marvel957/hngtask0
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the server:**
-
-   ```bash
-   npm start
-   ```
-
-4. **Test the API locally:**
-   Open your browser or use Postman to visit:
-   ```
-   http://localhost:5000/
-   ```
+- ✅ Determines if a number is **prime**, **perfect**, or **Armstrong**
+- ✅ Classifies the number as **odd** or **even**
+- ✅ Calculates the **sum of its digits**
+- ✅ Fetches a **fun fact** about the number from the Numbers API
+- ✅ Handles **invalid inputs** gracefully
+- ✅ Supports **CORS (Cross-Origin Resource Sharing)**
+- ✅ Returns **JSON responses**
 
 ---
 
-## API Documentation
+## API Endpoints
 
-### Base URL (Deployed API Endpoint)
+### 1️⃣ Classify a Number
+
+📌 **Endpoint:**
 
 ```
-https://hngtask00.onrender.com/
+GET /api/classify-number?number=<integer>
 ```
 
-### Endpoint:
+📌 **Request Parameters:**
+| Parameter | Type | Required | Description |
+|-----------|--------|----------|---------------------------------|
+| `number` | Integer | ✅ Yes | The number to classify |
 
-#### **GET /**
-
-Returns essential details in JSON format.
-
-#### **Request Format:**
-
-No request parameters required.
-
-#### **Response Format (`200 OK`):**
+📌 **Successful Response (200 OK)**  
+Example for **371**:
 
 ```json
 {
-  "email": "hamsik957@gmail.com",
-  "current_datetime": "2025-01-30T21:22:08.607Z",
-  "github_url": "https://github.com/marvel957/hngtask0"
+  "number": 371,
+  "is_prime": false,
+  "is_perfect": false,
+  "properties": ["armstrong", "odd"],
+  "digit_sum": 11,
+  "fun_fact": "371 is an Armstrong number because 3^3 + 7^3 + 1^3 = 371"
 }
 ```
 
-### Example Usage
+📌 **Invalid Input Response (400 Bad Request)**  
+Example for `"alphabet"`:
 
-#### **Using `curl` in Terminal:**
-
-```bash
-curl -X GET https://hngtask00.onrender.com/
+```json
+{
+  "number": "alphabet",
+  "error": true
+}
 ```
 
-#### **Using JavaScript (Fetch API):**
+---
 
-```js
-fetch("https://hngtask00.onrender.com/")
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((error) => console.error("Error:", error));
+## Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```sh
+git clone https://github.com/yourusername/classify-number-api.git
+cd classify-number-api
 ```
+
+### 2️⃣ Install Dependencies
+
+```sh
+npm install
+```
+
+### 3️⃣ Create a `.env` File (Optional)
+
+```sh
+PORT=5000
+```
+
+### 4️⃣ Run the Server
+
+```sh
+node server.js
+```
+
+✅ Server runs on: `http://localhost:5000`
 
 ---
 
 ## Deployment
 
-The API is deployed on **Render** and is publicly accessible.
+To deploy your API, use platforms like:
 
-- **Live URL:** [https://hngtask00.onrender.com/](https://hngtask00.onrender.com/)
-- **Response Time:** < 500ms
-
----
-
-## Related Link
-
-Interested in **Node.js developers**? Visit:
-👉 [https://hng.tech/hire/nodejs-developers](https://hng.tech/hire/nodejs-developers)
+- [Render](https://render.com/)
+- [Railway](https://railway.app/)
+- [Vercel](https://vercel.com/)
 
 ---
 
-### License
+## Tech Stack
 
-This project is open-source and available under the MIT License.
+🚀 **Backend:** Node.js, Express.js  
+📡 **API Requests:** Axios  
+🌍 **Deployment:** Any cloud hosting provider
 
 ---
 
-### Author
+## License
 
-Developed by **[OLORUNDA HAMIFUE MARVELLOUS]**
+This project is **MIT Licensed**. Feel free to use and modify it.
+
+---
+
+## Contributors
+
+👤 **Your Name** (GitHub: [@yourusername](https://github.com/yourusername))
+
+---
+
+🔥 **Happy Coding!** 🚀
